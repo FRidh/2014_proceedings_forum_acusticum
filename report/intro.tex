@@ -1,0 +1,52 @@
+%newpage
+\section{Introduction}
+Aircraft noise can cause annoyance and sleep disturbance. Annoyance and
+sleep disturbance is currently predicted using indicators based on time-averaged sound
+pressure levels. This completely discards the character of the sound. To obtain a better 
+representation of annoyance, the audible aircraft sound should be predicted in order to 
+determine the impact of the sound on people.
+
+Auralization is a technique to synthesise the aural aspects of an object or
+surrounding. Auralization can therefore be used to create audible aircraft sounds that
+can be used in listening tests.
+
+\subsection{Aircraft auralisation tool}
+An aircraft auralisation tool is being developed that should provide plausible 
+auralisations of aircraft noise for typical urban situations where reflections 
+and shielding can play an important role.
+
+In the auralisation tool a distinction is made between a source model and a 
+propagation model. The source model describes the emission of the aircraft, i.e. 
+the spectral content as function of time and angle (directivity). 
+The propagation model describes the propagation of the sound from source to receiver 
+and currently supports:
+\begin{itemize}
+ \item spherical spreading resulting in a decrease of sound pressure with increase of source-receiver distance;
+ \item Doppler shift due to relative motion between the moving aircraft and the non-moving receiver;
+ \item atmospheric absorption due to relaxation processes;
+ \item reflections at the ground and facades.% due to a sudden change in impedance;
+\end{itemize}
+The propagation model is based on geometrical acoustics. The reflections are determined using the Image Source Method.
+
+\subsection{Turbulence}
+When listening to aircraft noise, sound level fluctuations caused by atmospheric 
+turbulence are clearly audible. Therefore, to create a realistic auralisation of 
+aircraft noise, atmospheric turbulence needs to be included.
+
+Due to spatial inhomogeneities of the wind velocity and temperature in the atmosphere, 
+acoustic scattering occurs, affecting the transfer function between source and receiver. 
+Both these inhomogeneities and the aircraft position are time-dependent, and therefore 
+the transfer function varies with time resulting in the audible fluctuations. 
+
+The theory of turbulence is a statistical theory. A statistical theory fits well 
+with the physics of turbulence since turbulence is a consequence of instability of 
+fluid flow in relation to very small fluctuations in the fluid \cite{Tatarskii1971}. For an auralisation instantaneous values of the sound pressure at the receiver are required.
+
+Artnzen\cite{Arntzen2013a} included a phase fluctuations filter in their aircraft noise simulator to make the ground effect less pronounced.
+The filter was based on a Gaussian spectrum of turbulence.
+
+In this paper an initial model is presented to describe fluctuations in the sound pressure due to atmospheric 
+turbulence as function of time. A stationary (frozen) atmosphere is assumed where the 
+movement of the aircraft alone gives rise to fluctuations.
+In contrast to Arntzen\cite{Arntzen2013a}, both amplitude and phase fluctuations are considered. The model is based on a simple model by Daigle et. al.\cite{Daigle1983}.
+

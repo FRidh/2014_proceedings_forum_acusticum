@@ -1,0 +1,181 @@
+\section{Theory}
+As mentioned in the introduction the theory of turbulence is a statistical theory.
+The wind velocity components and temperature in the turbulent atmosphere are fluctuating functions of both position and time.
+
+% \subsection{Correlation function}
+The fields of the wind velocity components and the temperature are random fields.
+A characteristic of a random function or field is it's correlation function. \cite{Tatarskii1971}
+The correlation function of such a random field $f(\mathbf{r})$, as function of distance $\mathbf{r}$ between observation points only, is defined as
+\begin{equation}
+ B(\mathbf{r}_1, \mathbf{r}_2) = \langle f(\mathbf{r}_1  f(\mathbf{r}_2) \rangle
+\end{equation}
+Note that we've assumed a 'frozen turbulence' here. 
+
+In a homogeneous and isotropic random field the correlation function $B(\mathbf{r})$ 
+depends only on $|r|=\mathbf{r}$, i.e., only the distance between the observation points.
+
+
+\subsection{Gaussian spectrum}
+In the region of large eddy sizes the turbulence spectrum can be approximated by a Gaussian distribution.
+The spatial correlation function for the fluctuating refractive-index $\mu$ therefore also has a Gaussian form
+\begin{equation}
+ \langle \mu_1 \mu_2 \rangle = \langle \mu^2 \rangle \exp{\left( -x^2 / L^2 \right)}
+\end{equation}
+When the outer length scale of the turbulence $L$ is much smaller than the Fresnel zone, 
+the mean square log-amplitude and phase fluctuations for spherical waves are given by
+\begin{equation}\label{eq:model_daigle}
+ \langle \chi^2 \rangle = \langle S^2 \rangle = \frac{\sqrt{\pi}}{2} \langle \mu^2 \rangle k^2 r L 
+\end{equation}
+where $k$ is the wavenumber and $r$ is the distance of propagation.
+The mean square log-amplitude and phase fluctuations are defined respectively as $\langle \chi^2 \rangle = \langle \left( \ln{\frac{A_{n}}{A_{m}}} \right) ^2 \rangle $
+and $ \langle S^2 \rangle = \langle \left( \phi_n - \phi_m \right)^2  \rangle$. The index $n$ indicates the sample $n$ at time $t$ and index $m$ the average fluctuation.
+For spherical waves the covariances of the fluctuations, $B_{\chi}(\rho)$ and $B_{S}(\rho)$, normalized to their variances, are given by
+\begin{equation}
+ \frac{B_{\chi} (\rho)}{\langle \chi^2 \rangle} = \frac{B_{S} (\rho)}{\langle S^2 \rangle} = \frac{\Phi\left(\rho/L\right)}{\rho/L}
+\end{equation}
+where 
+\begin{align}
+ \phi \left(\rho/L \right) &= \int_0^{\rho/L} \exp{\left(-u^2\right)} \mathrm{d} u 
+ &= \frac{1}{2} \sqrt{\pi} \mathrm{erf}\left( \rho/L \right)
+\end{align}
+with $\mathrm{erf}$ the error function.
+The covariance of the fluctuations $B_{\chi}(\rho)$ and $B_{S}(\rho)$ are thus given by
+\begin{equation}
+ B_{\chi} (\rho) = B_{S}(\rho) = \frac{\sqrt{\pi}}{2}  \langle \mu^2  \rangle k^2 r L 
+\frac{\Phi(\rho/L) }{\rho / L}
+\end{equation}
+according to Daigle's model.
+
+\subsection{Time series of fluctuations}
+% The fluctuations of the random fields cause amplitude and phase fluctuations or modulations.
+For the auralisation, time series of instantaneous fluctuations of log-amplitude and phase are required, $\chi(t)$ and $S(t)$.
+Because the modulations are frequency-dependent, we would like to obtain realisations of $\chi(t, f)$ and $S(t, f)$ which describe the fluctuation of the log-amplitude $\chi$ and phase $S$ at a time $t$ for frequency $f$.
+The frequency $f$ is the frequency of the signal component that should be modulated.
+
+By assuming that $\chi(t,f)$ and $S(t,f)$ are Gaussian random variables, we can produce realisations of $\chi(t,f)$ and $S(t,f)$ by filtering white noise with a chosen filter function.
+The desired filter response is the impulse response $h(\rho)$ of the covariance $B(\rho)$, which is obtained by taking the inverse Fourier transform of the square root of the autospectrum of $B(\rho)$.
+% \begin{equation}
+%  h(\rho) = \sqrt{S_{\rho}}
+% \end{equation}
+
+By taking these steps, two series of fluctuations are obtained, $\chi(t, f)$ and $S(t, f)$. 
+The two time series can be merged into a single complex modulation signal
+\begin{equation}
+ m(t,f) = \exp{\left( \chi\left(t,f\right) + j S\left(t, f\right) \right)}
+\end{equation}
+that can then be applied to the input signal.
+
+\subsection{Saturation of the log-amplitude}
+For longer path lengths and stronger turbulence, the amplitude fluctuations gradually level off.
+Saturation of the amplitude fluctuations can be observed when measuring aircraft noise at distances of over a few kilometers.
+The standard deviation of the fluctuating sound pressure levels is in such cases limited to no approximately 6 dB \cite{Daigle1983,Piercy1974}.
+
+Saturation of the log-amplitude can be included based on an analysis by Wenzel \cite{Wenzel1975}.
+In Wenzel's approach the soundwave is split up in a coherent and incoherent wave. The amplitude of the coherent wave decreases over distance while the incoherent wave obtains the energy from the coherent wave.
+The coherent wave $p$ is written as
+\begin{equation}
+ \langle p \  p^* \rangle = \left( A_m^2 / 4 \pi r^2 \right) \exp{\left( -2 \langle \mu^2 \rangle k^2 r L \right)}
+\end{equation}
+Wenzel defines the distance to saturation $r_s$ as the distance at which the coherent wave is reduced to $e^{-1}$ of its original strength
+\begin{equation}\label{eq:saturation_distance}
+ r_s = \frac{1}{2 \langle \mu^2 \rangle k^2 L}
+\end{equation}
+Saturation of the log-amplitude fluctuations can now be included by multiplying $\chi(t,f)$ with
+\begin{equation}
+ \sqrt{ \frac{ 1}{1 + r/r_s}}
+\end{equation}
+
+
+\subsection{Applying the modulations to the original signal}
+In case the input signal consists of just one frequency $f$ and the modulation 
+signal $m$ is calculated for that specific frequency, then the modulation can simply be 
+applied by multiplying the two in the time-domain.
+However, for the auralisation we have broadband sounds with more than one frequency line to consider. 
+As the fluctuations are frequency-dependent, the modulation 
+signal would have to be calculated for every frequency line.
+
+One of the design criteria of the auralisation tool is to produce at or near 
+real-time auralisations. Since computing the modulation signal for every 
+frequency line is computationally relatively heavy, another solution is sought.
+The variances of the log-amplitude and phase fluctuations increase according to 
+this simple theory linearly with frequency. Therefore, another option would be to scale both 
+$\chi(t,f)$ and $S(t,f)$ accordingly. Care should be taken considering the saturation distance is frequency-dependent.
+
+
+
+
+
+
+% % To obtain the modulation spectrum the following steps are performed:
+% % 
+% % \begin{enumerate}
+% %  \item Sample the correlation function $B(\rho)$ at distances $\rho_m$ where $\Delta \rho$ is small enough to resolve the acoustic field.
+% %  \item Optionally apply a window.
+% %  \item Fourier transform and calculate the autospectrum $C_{xx}$.
+% %  \item Inverse Fourier transform of the square root of the autospectrum.
+% %  \item $C_{xx}$ to obtain $h(\rho_m)$.
+% %  \item Convolute $h(\rho_m)$ with white noise to obtain the fluctuations $\chi$ and $S$.
+% %  \item Modulation spectrum $M(f)$ is then given by $M(f) = e^{\chi(y_i) + j S(y_i)} \cdot e^{-B(0)}$
+% % \end{enumerate}
+% % 
+% % 
+% % The modulation spectrum can then be applied to the acoustic signal $p$.
+% % 
+% % \begin{enumerate}
+% %  \item Inverse Fourier transform of the modulation spectrum $M(f)$ to obtain the modulation impulse response $m(t)$.
+% %  \item Resample the impulse response $m(t)$ to match with the sample frequency of the acoustic signal $p(t)$.
+% %  \item Perform the convolution between the acoustic signal $p(t)$ and the modulation impulse response $m(t)$.
+% % \end{enumerate}
+% % 
+% % The log-amplitude and phase fluctuations are described by
+% % \begin{align}
+% %  \chi &= \log{A / A_0} \\
+% %  S &= \phi - \phi_0
+% % \end{align}
+% % where $A$ and and $\phi$ are respectively the amplitude and phase in presence of turbulence and 
+% % $A_0$ and $\phi_0$ respectively the amplitude and phase in absence of turbulence.
+% %  
+% % The correlation function for the log-amplitude and phase fluctuations can be written respectively as
+% % \begin{align}
+% %   B_{\chi} \left( \rho \right) &= \langle \chi (\mathbf{r}), \chi( \mathbf{r}+\mathbf{\rho} ) \rangle \\
+% %   B_S \left( \rho \right) &= \langle S (\mathbf{r}), S( \mathbf{r}+\mathbf{\rho} ) \rangle
+% % \end{align}
+% % where $\mathbf{r}$ describes a point in the field and $\mathbf{\rho}$ is a transversal separation from the point $\mathbf{r}$.
+% % 
+% % 
+% % For a Gaussian model
+% % \begin{equation}
+% %  B_{\chi} ( \rho ) = B_{S} ( \rho ) = \mu_0^2 k^2 L l .....
+% % \end{equation}
+% % 
+% %  
+% % Realisations of the log-amplitude and phase fluctuations are then produced by the convolution of 
+% % $h\left(\rho_m \right)$ and Gaussian white noise with a mean value of 0 and variance 1.
+% % 
+% % The modulation signal is calculated for a single frequency $f_m$.
+% % Higher frequencies are affected more strongly by turbulence.
+
+
+% For every frequency in the input signal the modulation signal is applied albeit with a different multiplication.
+% 
+% The modulated signal is then calculated as
+% % \begin{equation}
+% %  \hat{p}_{out} = \sum_{i=0}^n \Re{A[i] exp{j \omega t} f_m}
+% % \end{equation}
+% 
+% 
+% 
+% The following procedure can be followed as well for other turbulence models, e.g. the Von Karman model.
+% 
+% Since the modulation spectrum is range dependent it should eventually be 
+% calculated for every source-receiver distance.
+
+
+% See BAC 8.54. Scattered power relative to free field is proportional to $f^{1/3}$
+
+
+% 
+% \subsection{Time-domain simulations}
+% 
+
+

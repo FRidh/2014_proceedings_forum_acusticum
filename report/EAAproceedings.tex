@@ -1,0 +1,73 @@
+\documentclass[twoside,twocolumn,a4paper]{article}
+\usepackage{EAAproceedings}
+
+\begin{document}
+
+% ****************  Begin of manuscript **********************
+\Englishtitle{Modelling sound propagation in the presence of atmospheric 
+turbulence for the auralisation of aircraft noise}
+
+% Short title:
+\Kolumnentitel{Rietdijk, Heutschi, Forssén: Atmospheric turbulence and aircraft auralisation} 
+
+\PACS{43.28.Gq}
+
+% 43.28.Gq	Outdoor sound propagation and scattering in a turbulent atmosphere, and in non-uniform flow fields
+% 
+
+
+% Authors' names, affiliations and addresses
+% optionally grouped if with different institutions.
+% First group:
+\AuthorsI{Frederik Rietdijk, Kurt Heutschi}
+\AddressI{Empa, Swiss Federal Laboratories for Materials Science and Technology, Dubendorf, Switzerland}
+% Second group: (activate if applicable)
+\AuthorsII{Jens Forssén}
+\AddressII{Chalmers University of Technology, Gothenburg, Sweden}
+% \AddressII{Chalmers University of Technology, Department of Civil \& Environmental Engineering, Gothenburg, Sweden}
+% Third group (activate if applicable)
+% \AuthorsIII{Maarten Hornikx}
+% \AddressIII{Eindhoven University of Technology, Eindhoven, The Netherlands}
+
+
+% English Abstract:
+\Englishabstract{A new tool for the auralisation of aircraft noise in an urban 
+environment is in development. When listening to aircraft noise sound level 
+fluctuations caused by atmospheric turbulence are clearly audible. Therefore, to 
+create a realistic auralisation of aircraft noise, the influence of atmospheric turbulence on sound propagation needs 
+to be included. Presented is a model in development for including fluctuations due to 
+movement through a frozen turbulent atmosphere in an auralisation.
+}
+
+% \abstract{
+% A new tool for the auralisation of aircraft noise in an urban environment is in 
+% development. When listening to aircraft noise sound level fluctuations caused by 
+% atmospheric turbulence are clearly audible. Therefore, to create a realistic 
+% auralisation of aircraft noise, atmospheric turbulence needs to be included.
+% 
+% Due to spatial inhomogeneities of the wind velocity and temperature in the 
+% atmosphere acoustic scattering occurs, affecting the transfer function between 
+% source and receiver. Both these inhomogeneities and the aircraft position are 
+% time-dependent, and therefore the transfer function varies with time resulting 
+% in the audible fluctuations. Assuming a stationary (frozen) atmosphere, the 
+% movement of the aircraft alone gives rise to fluctuations.
+% 
+% Sound propagation of a moving source in a frozen atmosphere is simulated using a 
+% k-space PSTD method. The impulse responses obtained from these simulations are 
+% then used to create a simplified model describing the influence of turbulence on 
+% a moving elevated source that can then be used to simulate the influence of 
+% atmospheric turbulence in the auralisation of aircraft noise.
+% }
+
+\ScientificPaper
+\input{intro}
+\input{theory}
+\input{validation}
+\input{discussion}
+\input{conclusions}
+
+\bibliographystyle{plain}
+\bibliography{../../../References/library}
+
+\end{document}
+
